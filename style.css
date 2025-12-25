@@ -1,0 +1,274 @@
+@font-face {
+  font-family: 'old';
+  src: url('fonts/old.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  background-image: url("images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  font-family: "old", sans-serif;
+  font-size: 20px;
+  color: #2b2b2b;
+}
+
+/* SCREEN */
+.screen {
+  max-width: 860px;
+  margin: auto;
+  padding: 60px 20px;
+  display: none;
+}
+.screen.active {
+  display: block;
+}
+
+/* HEADERS */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* PARAGRAPHS */
+p {
+  font-family: 'old', sans-serif;
+  font-size: 20px;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* SCENE IMAGES */
+.scene-img {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  width: 500px; /* default image width */
+  max-height: 400px; /* max height for uniform size */
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* INTRO IMAGE SPECIAL */
+#intro .scene-img {
+  width: 70%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 6px;
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+  filter: blur(0.5px);
+}
+
+/* OPTION PANEL */
+.option-panel {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* TEXT-ONLY BUTTONS with highlight effect */
+button.interactive-btn,
+.option-panel button {
+  background: none;
+  border: none;
+  font-family: 'old', sans-serif;
+  font-size: 22px;
+  color: #2b2b2b;
+  cursor: pointer;
+  padding: 6px 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+button.interactive-btn:hover,
+.option-panel button:hover {
+  color: #ffffff;
+  text-shadow: 0 0 12px #ffd700;
+  transform: scale(1.05);
+}
+
+button.interactive-btn:active,
+.option-panel button:active {
+  color: #ffe680;
+  text-shadow: 0 0 8px #ffd700;
+  transform: scale(0.98);
+}
+
+/* FADE ANIMATION */
+.fade {
+  animation: fadeIn 1.1s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* TYPEWRITER */
+.typewriter {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* FULL TEXT SLIDE (hidden by default) */
+#fullIntro,
+.full-text {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+#fullIntro.show,
+.full-text.show {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 768px) {
+  .screen {
+    padding: 40px 15px;
+  }
+
+  .scene-img {
+    width: 90%; /* smaller width for phones/tablets */
+    max-height: 300px;
+  }
+
+  button.interactive-btn,
+  .option-panel button {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .screen {
+    padding: 30px 10px;
+  }
+
+  .scene-img {
+    width: 95%;
+    max-height: 250px;
+  }
+
+  button.interactive-btn,
+  .option-panel button {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* center short explanation */
+.center-text {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.ref-block {
+  margin-top: 20px;
+}
+
+.ref-toggle {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  color: #2b2b2b;
+}
+
+.ref-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: 10px;
+}
+
+.ref-content.show {
+  max-height: 2000px;
+}
+
+.references {
+  padding-left: 22px;
+}
+
+.references li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.references a {
+  word-break: break-word;
+}
+
+/* NAVIGATION BUTTONS */
+.nav-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.nav-btn {
+  background: none;
+  border: 1px solid #2b2b2b;
+  font-family: 'old', sans-serif;
+  font-size: 16px;
+  color: #2b2b2b;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-btn:hover {
+  color: #ffffff;
+  text-shadow: 0 0 12px #ffd700;
+  transform: scale(1.05);
+}
+
+.nav-btn:active {
+  color: #ffe680;
+  text-shadow: 0 0 8px #ffd700;
+  transform: scale(0.98);
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+}

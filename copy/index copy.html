@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guided Choices — STS Interactive Simulation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="pageSound" src="sounds/page.mp3"></audio>
+
+<!-- INTRO -->
+<section id="intro" class="screen active fade">
+  <h1>STS Interactive Simulation</h1>
+  <img src="images/intro.gif" class="scene-img">
+
+  <!-- Short intro -->
+  <p class="typewriter" id="shortIntro">
+    Algorithms increasingly shape what people see, think, and choose. 
+    This interactive simulation explores how algorithmic systems influence 
+    youth decision-making in everyday digital life.
+  </p>
+
+  <!-- Hidden full explanation -->
+  <p class="typewriter full-text" id="fullIntro">
+    Algorithmic curation increasingly shapes the digital environments that young people navigate, 
+    influencing what they see, how they interpret information, and ultimately how they make everyday decisions. 
+    Research by Swart (2021) shows that social media algorithms filter news and personalized content based on user interactions, 
+    yet young people’s awareness of these systems is often limited and context-dependent. 
+    This dynamic not only directs their exposure to information but also impacts their ability to understand and intervene in algorithmic processes, 
+    highlighting the importance of developing stronger algorithmic literacy in the digital age.
+  </p>
+
+  <!-- Arrow button for full explanation -->
+  <div style="text-align:center; margin-top: 10px;">
+    <button onclick="toggleFullIntro(this)" class="interactive-btn">▼ More Info</button>
+  </div>
+
+  <!-- Button to go to scenario menu -->
+  <button onclick="showScenarioMenu()" class="interactive-btn" style="margin-top: 30px;">Begin Simulation</button>
+</section>
+
+<!-- SCENARIO MENU -->
+<section id="scenarioMenu" class="screen fade">
+  <h2>Select a Scenario</h2>
+  <div class="option-panel">
+    <button onclick="startScenario(1)">Scenario 1</button>
+    <button onclick="startScenario(2)">Scenario 2</button>
+  </div>
+</section>
+
+<!-- SCENE 1 -->
+<section id="scene1" class="screen fade">
+  <h2>Scenario 1: Attention & Time</h2>
+  <img src="images/socmed.gif" class="scene-img">
+  <p class="typewriter">
+    You open a social media app to take a short break before studying.
+    Almost immediately, the platform recommends videos similar to those
+    you have previously watched.
+  </p>
+  <div class="option-panel">
+    <button onclick="showResult('r1a','Watch the videos')">Watch the videos</button>
+    <button onclick="showResult('r1b','Ignore and study')">Ignore and study</button>
+    <button onclick="showResult('r1c','Save for later')">Save for later</button>
+  </div>
+</section>
+
+<!-- SCENE 2 -->
+<section id="scene2" class="screen fade">
+  <h2>Scenario 2: Information & Opinion</h2>
+  <img src="images/newsfeed.gif" class="scene-img">
+  <p class="typewriter">
+    You search for information about a trending social issue.
+    The platform displays articles that closely match your past interactions
+    and previously liked content.
+  </p>
+  <div class="option-panel">
+    <button onclick="showResult('r2a','Read only recommended articles')">Read recommended articles</button>
+    <button onclick="showResult('r2b','Search for different viewpoints')">Search different viewpoints</button>
+  </div>
+</section>
+
+<!-- RESULT -->
+<section id="result" class="screen fade"></section>
+
+<!-- FINAL -->
+<section id="final" class="screen fade">
+  <h2>Final Reflection</h2>
+  <p class="justified">
+    This project explored how science and technology—particularly algorithmic systems and digital media—shape human behavior, decision-making, and understanding in contemporary society. Rather than relying on overt persuasion or direct argument, digital platforms influence users through subtle design mechanisms such as personalized recommendations, infinite scrolling, and attention-capturing interfaces. These systems persuade by appealing to psychological tendencies like immediate gratification and habit formation, raising important disputes about autonomy, awareness, and ethical responsibility in digital environments.<br><br>
+    Throughout the analysis, a clear distinction was made between factual evidence and inference. Research-based findings demonstrated measurable outcomes such as increased screen time, reduced concentration, delayed consumption, and narrowed exposure to information, while inferences were used to explain how these patterns affect cognition, emotional well-being, and long-term understanding. Evaluating credible academic and health sources ensured that conclusions were grounded in relevant and verifiable data.<br><br>
+    The project also highlighted the roles of individuals, organizations, and institutions in both contributing to and addressing these challenges. Technology companies design the systems that shape information flow, while media organizations influence public awareness and opinion. At the same time, educators, researchers, and mental health professionals provide strategies that empower individuals to maintain focus, resist distraction, and seek multiple perspectives. This demonstrates that solutions to societal problems require shared responsibility across multiple sectors.<br><br>
+    Media plays a central role in shaping world events and public opinion, acting both as a source of information and as a mechanism of influence. Historically, media has always affected public perception, but modern algorithm-driven platforms intensify this influence through personalization and scale. These developments connect past media evolution to present concerns, explaining how historical trends have led to today’s challenges with attention, understanding, and polarization.<br><br>
+    The issue intersects with geography, culture, economics, and politics, as digital platforms influence global communication, consumer behavior, cultural norms, and political discourse across regions. The societal impact is evident at local, national, and international levels, affecting education, mental health, civic engagement, and information accessibility.<br><br>
+    To address these challenges, the project proposes solutions centered on algorithmic literacy, intentional media use, perspective-seeking, and self-regulation. Encouraging users to engage critically with content, limit passive consumption, and actively seek diverse viewpoints can reduce negative effects while preserving the benefits of technology. By integrating insights from multiple disciplines and media formats, these solutions offer a balanced and sustainable approach.<br><br>
+    In conclusion, while digital technologies profoundly shape modern life, their influence can be understood, evaluated, and managed. Through critical awareness and informed action, individuals and societies can navigate digital environments more responsibly and develop a broader, more meaningful understanding of the world.<br><br>
+  </p>
+
+<h3>References</h3>
+
+<!-- SCENARIO 1 -->
+<div class="ref-block">
+  <button class="ref-toggle" onclick="toggleRefs(this)">
+    ▼ Scenario 1 – Attention & Time
+  </button>
+
+  <div class="ref-content">
+    <h5>Option 1: Scrolling, Addiction, and Mental Health</h5>
+    <ul class="references">
+      <li>
+        GCFGlobal. (n.d.). <em>Why we can’t stop scrolling</em>.  
+        <a href="https://edu.gcfglobal.org/en/digital-media-literacy/why-we-cant-stop-scrolling/1/" target="_blank">
+          https://edu.gcfglobal.org/en/digital-media-literacy/why-we-cant-stop-scrolling/1/
+        </a>
+      </li>
+
+      <li>
+        Mayo Clinic Staff. (n.d.). <em>Doomscrolling and mental health</em>.  
+        <a href="https://mcpress.mayoclinic.org/mental-health/doom-scrolling-and-mental-health/" target="_blank">
+          https://mcpress.mayoclinic.org/mental-health/doom-scrolling-and-mental-health/
+        </a>
+      </li>
+
+      <li>
+        Hafeez, S. (n.d.). <em>Mental health and technology: How to curb digital addiction</em>.  
+        <a href="https://comprehendthemind.com/mental-health-and-technology-how-to-curb-digital-addiction/" target="_blank">
+          https://comprehendthemind.com/mental-health-and-technology-how-to-curb-digital-addiction/
+        </a>
+      </li>
+    </ul>
+
+    <h5>Option 2: Focus, Attention, and Studying</h5>
+    <ul class="references">
+      <li>
+        Harvard Health Publishing. (n.d.). <em>Tips to improve concentration</em>.  
+        <a href="https://www.health.harvard.edu/mind-and-mood/tips-to-improve-concentration" target="_blank">
+          https://www.health.harvard.edu/mind-and-mood/tips-to-improve-concentration
+        </a>
+      </li>
+    </ul>
+
+    <h5>Option 3: Binge-Watching and Self-Control</h5>
+    <ul class="references">
+      <li>
+        Merrill, K., &amp; Rubenking, B. (2019). <em>Go long or go often</em>.  
+        <a href="https://www.mdpi.com/2076-0760/8/1/10" target="_blank">
+          https://www.mdpi.com/2076-0760/8/1/10
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- SCENARIO 2 -->
+<div class="ref-block">
+  <button class="ref-toggle" onclick="toggleRefs(this)">
+    ▼ Scenario 2 – Information & Opinion
+  </button>
+
+  <div class="ref-content">
+    <h5>Option 1: Personalized Recommendations</h5>
+    <ul class="references">
+      <li>
+        Zhao, L., Fu, B., &amp; Bai, S. (2025). <em>Personalized recommendation and cognition</em>.  
+        <a href="https://www.mdpi.com/0718-1876/20/1/32" target="_blank">
+          https://www.mdpi.com/0718-1876/20/1/32
+        </a>
+      </li>
+    </ul>
+
+    <h5>Option 2: Perspective-Seeking</h5>
+    <ul class="references">
+      <li>
+        Digital Promise Global. (n.d.). <em>Perspective seeking</em>.  
+        <a href="https://lvp.digitalpromiseglobal.org/" target="_blank">
+          https://lvp.digitalpromiseglobal.org/
+        </a>
+      </li>
+
+      <li>
+        Maryville University. (2022). <em>Gaining understanding through perspectives</em>.  
+        <a href="https://online.maryville.edu/blog/gaining-understanding-different-perspectives/" target="_blank">
+          https://online.maryville.edu/blog/gaining-understanding-different-perspectives/
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
