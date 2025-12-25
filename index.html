@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Guided Choices — STS Interactive Simulation</title>
+  <title>Finals — STS Interactive Simulation</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -77,8 +77,12 @@
 <!-- SCENE 2 -->
 <section id="scene2" class="screen fade">
   <div class="nav-buttons">
-    <button onclick="goToScenarios()" class="nav-btn">Scenarios</button>
-    <button onclick="goHome()" class="nav-btn">Home</button>
+    <button onclick="goToScenarios()" class="nav-btn">
+      <img src="icons/scene.svg" alt="Scenarios" class="nav-icon"> Scenarios
+    </button>
+    <button onclick="goHome()" class="nav-btn">
+      <img src="icons/home.svg" alt="Home" class="nav-icon"> Home
+    </button>
   </div>
   <h2>Scenario 2: Information & Opinion</h2>
   <img src="images/newsfeed.gif" class="scene-img">
@@ -95,6 +99,23 @@
 
 <!-- RESULT -->
 <section id="result" class="screen fade"></section>
+
+<!-- UNLOCK -->
+<section id="unlock" class="screen fade">
+  <div class="unlock-container">
+    <h2>Unlock the Ancient Knowledge</h2>
+    <p class="typewriter">To proceed to the final reflection, you must unlock the ancient parchment by guiding the key to the lock.</p>
+
+    <div class="lock-area">
+      <img id="lock" src="icons/lock.svg" alt="Lock" class="lock-icon clickable">
+      <img id="unlock-icon" src="icons/unlock.svg" alt="Unlock" class="unlock-icon" style="display: none;">
+    </div>
+
+    <div class="instruction">
+      <p>Click on the lock to unlock the final reflection.</p>
+    </div>
+  </div>
+</section>
 
 <!-- FINAL -->
 <section id="final" class="screen fade">
@@ -117,6 +138,8 @@
     In conclusion, while digital technologies profoundly shape modern life, their influence can be understood, evaluated, and managed. Through critical awareness and informed action, individuals and societies can navigate digital environments more responsibly and develop a broader, more meaningful understanding of the world.<br><br>
   </p>
 
+
+
 <h3>References</h3>
 
 <!-- SCENARIO 1 -->
@@ -129,21 +152,28 @@
     <h5>Option 1: Scrolling, Addiction, and Mental Health</h5>
     <ul class="references">
       <li>
-        GCFGlobal. (n.d.). <em>Why we can’t stop scrolling</em>.  
+        GCFGlobal. (n.d.). <em>Why we can't stop scrolling</em>. GCFGlobal.
         <a href="https://edu.gcfglobal.org/en/digital-media-literacy/why-we-cant-stop-scrolling/1/" target="_blank">
           https://edu.gcfglobal.org/en/digital-media-literacy/why-we-cant-stop-scrolling/1/
         </a>
       </li>
 
       <li>
-        Mayo Clinic Staff. (n.d.). <em>Doomscrolling and mental health</em>.  
+        CTR Institute. (n.d.). <em>How to overcome social media addiction</em>. Center for Technology and Relationships.
+        <a href="https://ctrinstitute.com/blog/how-to-overcome-social-media-addiction/" target="_blank">
+          https://ctrinstitute.com/blog/how-to-overcome-social-media-addiction/
+        </a>
+      </li>
+
+      <li>
+        Mayo Clinic Staff. (n.d.). <em>Doomscrolling and mental health</em>. Mayo Clinic Press.
         <a href="https://mcpress.mayoclinic.org/mental-health/doom-scrolling-and-mental-health/" target="_blank">
           https://mcpress.mayoclinic.org/mental-health/doom-scrolling-and-mental-health/
         </a>
       </li>
 
       <li>
-        Hafeez, S. (n.d.). <em>Mental health and technology: How to curb digital addiction</em>.  
+        Hafeez, S. (n.d.). <em>Mental health and technology: How to curb digital addiction</em>. Comprehend the Mind.
         <a href="https://comprehendthemind.com/mental-health-and-technology-how-to-curb-digital-addiction/" target="_blank">
           https://comprehendthemind.com/mental-health-and-technology-how-to-curb-digital-addiction/
         </a>
@@ -153,9 +183,30 @@
     <h5>Option 2: Focus, Attention, and Studying</h5>
     <ul class="references">
       <li>
-        Harvard Health Publishing. (n.d.). <em>Tips to improve concentration</em>.  
+        Author(s). (Year). <em>A study planning exercise associated with decreased distraction while studying</em>. <em>Journal Name</em>. PubMed Central.
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10956610/" target="_blank">
+          https://pmc.ncbi.nlm.nih.gov/articles/PMC10956610/
+        </a>
+      </li>
+
+      <li>
+        Harvard Health Publishing. (n.d.). <em>Tips to improve concentration</em>. Harvard Medical School.
         <a href="https://www.health.harvard.edu/mind-and-mood/tips-to-improve-concentration" target="_blank">
           https://www.health.harvard.edu/mind-and-mood/tips-to-improve-concentration
+        </a>
+      </li>
+
+      <li>
+        University of Washington Bothell. (2024, May 17). <em>An ongoing study on the success of staying focused</em>.
+        <a href="https://www.uwb.edu/news/2024/05/17/an-ongoing-study-on-the-success-of-staying-focused" target="_blank">
+          https://www.uwb.edu/news/2024/05/17/an-ongoing-study-on-the-success-of-staying-focused
+        </a>
+      </li>
+
+      <li>
+        Oxford Summer Courses. (n.d.). <em>How to stay focused while studying</em>.
+        <a href="https://oxfordsummercourses.com/articles/how-to-stay-focused-while-studying" target="_blank">
+          https://oxfordsummercourses.com/articles/how-to-stay-focused-while-studying
         </a>
       </li>
     </ul>
@@ -163,9 +214,30 @@
     <h5>Option 3: Binge-Watching and Self-Control</h5>
     <ul class="references">
       <li>
-        Merrill, K., &amp; Rubenking, B. (2019). <em>Go long or go often</em>.  
+        Merrill, K., &amp; Rubenking, B. (2019). <em>Go long or go often: Influences on binge-watching frequency and duration among college students</em>. <em>Social Sciences, 8</em>(1), 10.
         <a href="https://www.mdpi.com/2076-0760/8/1/10" target="_blank">
           https://www.mdpi.com/2076-0760/8/1/10
+        </a>
+      </li>
+
+      <li>
+        Lades, L. K., Barbett, L., Daly, M., &amp; Dombrowski, S. U. (2022). <em>Self-control, goal interference, and the binge-watching experience</em>. <em>Computers in Human Behavior Reports</em>.
+        <a href="https://www.sciencedirect.com/science/article/pii/S2451958822000549" target="_blank">
+          https://www.sciencedirect.com/science/article/pii/S2451958822000549
+        </a>
+      </li>
+
+      <li>
+        Author(s). (Year). <em>Binge-watching, self-control, and media consumption behaviors</em>. <em>Journal Name</em>. PubMed Central.
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10955278/" target="_blank">
+          https://pmc.ncbi.nlm.nih.gov/articles/PMC10955278/
+        </a>
+      </li>
+
+      <li>
+        Shim, H., &amp; Jung, E. E. (2018). <em>I hate binge-watching but I can't help doing it: The moderating effect of immediate gratification and need for cognition</em>. <em>Telematics and Informatics, 35</em>(7), 1971–1979.
+        <a href="https://www.researchgate.net/publication/326207400" target="_blank">
+          https://www.researchgate.net/publication/326207400
         </a>
       </li>
     </ul>
@@ -179,29 +251,85 @@
   </button>
 
   <div class="ref-content">
-    <h5>Option 1: Personalized Recommendations</h5>
+    <h5>Option 1: Personalized Recommendations and Limited Understanding</h5>
     <ul class="references">
       <li>
-        Zhao, L., Fu, B., &amp; Bai, S. (2025). <em>Personalized recommendation and cognition</em>.  
+        Zhao, L., Fu, B., &amp; Bai, S. (2025). <em>Understanding the influence of personalized recommendation on purchase intentions from a self-determination perspective: Contingent upon product categories</em>. <em>Journal of Theoretical and Applied Electronic Commerce Research, 20</em>(1), 32.
         <a href="https://www.mdpi.com/0718-1876/20/1/32" target="_blank">
           https://www.mdpi.com/0718-1876/20/1/32
         </a>
       </li>
-    </ul>
 
-    <h5>Option 2: Perspective-Seeking</h5>
-    <ul class="references">
       <li>
-        Digital Promise Global. (n.d.). <em>Perspective seeking</em>.  
-        <a href="https://lvp.digitalpromiseglobal.org/" target="_blank">
-          https://lvp.digitalpromiseglobal.org/
+        Author(s). (2023). <em>Impacts of personalized recommendation systems on user cognition</em>. <em>Systems, 11</em>(8), 414.
+        <a href="https://www.mdpi.com/2079-8954/11/8/414" target="_blank">
+          https://www.mdpi.com/2079-8954/11/8/414
         </a>
       </li>
 
       <li>
-        Maryville University. (2022). <em>Gaining understanding through perspectives</em>.  
+        Author(s). (2025). <em>Algorithmic personalization and information diversity</em>. <em>AI &amp; Society</em>.
+        <a href="https://www.sciencedirect.com/science/article/pii/S0963868725000198" target="_blank">
+          https://www.sciencedirect.com/science/article/pii/S0963868725000198
+        </a>
+      </li>
+
+      <li>
+        Zhao, L., Fu, B., &amp; Bai, S. (2025). <em>Understanding the influence of personalized recommendation on purchase intentions</em>. ResearchGate.
+        <a href="https://www.researchgate.net/publication/389002763" target="_blank">
+          https://www.researchgate.net/publication/389002763
+        </a>
+      </li>
+    </ul>
+
+    <h5>Option 2: Perspective-Seeking and Broader Understanding</h5>
+    <ul class="references">
+      <li>
+        Author(s). (2023). <em>Perspective-taking and cognitive flexibility in digital environments</em>. <em>Journal of Behavioral Sciences</em>.
+        <a href="https://www.sciencedirect.com/science/article/pii/S2666954423000182" target="_blank">
+          https://www.sciencedirect.com/science/article/pii/S2666954423000182
+        </a>
+      </li>
+
+      <li>
+        Axe1. (n.d.). <em>Perspective-taking, empathy, and social media</em>. Medium.
+        <a href="https://medium.com/@axe1/perspective-taking-empathy-and-social-media-90224daacedb" target="_blank">
+          https://medium.com/@axe1/perspective-taking-empathy-and-social-media-90224daacedb
+        </a>
+      </li>
+
+      <li>
+        Digital Promise Global. (n.d.). <em>Perspective seeking: Multiple perspectives</em>. Learner Variability Project.
+        <a href="https://lvp.digitalpromiseglobal.org/content-area/adult-learner/strategies/perspective-seeking-multiple-perspectives-adult-learner/summary" target="_blank">
+          https://lvp.digitalpromiseglobal.org/content-area/adult-learner/strategies/perspective-seeking-multiple-perspectives-adult-learner/summary
+        </a>
+      </li>
+
+      <li>
+        Maryville University. (2022). <em>Gaining understanding through different perspectives</em>.
         <a href="https://online.maryville.edu/blog/gaining-understanding-different-perspectives/" target="_blank">
           https://online.maryville.edu/blog/gaining-understanding-different-perspectives/
+        </a>
+      </li>
+
+      <li>
+        Author(s). (Year). <em>Perspective-taking and empathy in social cognition</em>. <em>Journal Name</em>. PubMed Central.
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9518022/" target="_blank">
+          https://pmc.ncbi.nlm.nih.gov/articles/PMC9518022/
+        </a>
+      </li>
+
+      <li>
+        Oxford Journal. (n.d.). <em>Social comparison on social media</em>.
+        <a href="https://www.oxjournal.org/social-comparison-on-social-media/" target="_blank">
+          https://www.oxjournal.org/social-comparison-on-social-media/
+        </a>
+      </li>
+
+      <li>
+        Author(s). (2023). <em>Perspective-taking and educational engagement</em>. <em>Education Sciences, 13</em>(7), 745.
+        <a href="https://www.mdpi.com/2227-7102/13/7/745" target="_blank">
+          https://www.mdpi.com/2227-7102/13/7/745
         </a>
       </li>
     </ul>

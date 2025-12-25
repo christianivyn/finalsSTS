@@ -37,7 +37,7 @@ function toggleFullIntro(btn) {
   playSound();
 }
 
-// REFERENCSES BTN
+// REFERENCES BTN
 function toggleRefs(btn) {
   const content = btn.nextElementSibling;
   content.classList.toggle("show");
@@ -171,8 +171,9 @@ function goBack() {
 
 function nextScene() {
   document.getElementById("result").classList.remove("active");
-  document.getElementById("final").classList.add("active");
+  document.getElementById("unlock").classList.add("active");
   playSound();
+  initializeClickUnlock();
 }
 
 // NAVIGATION FUNCTIONS
@@ -187,4 +188,43 @@ function goToScenarios() {
   document.getElementById("scenarioMenu").classList.add("active");
   playSound();
 }
+
+// CLICK TO UNLOCK FUNCTIONALITY
+function initializeClickUnlock() {
+  const lock = document.getElementById('lock');
+  const unlockIcon = document.getElementById('unlock-icon');
+
+  // Add click event listener to the lock
+  lock.addEventListener('click', unlockLock);
+
+  function unlockLock() {
+    // Prevent multiple clicks
+    if (lock.style.display === 'none') return;
+
+    // Add glow effect briefly
+    lock.classList.add('lock-glow');
+
+    // Play unlock sound
+    playSound();
+
+    // After a short delay, hide lock and show unlock icon
+    setTimeout(() => {
+      lock.style.display = 'none';
+      unlockIcon.style.display = 'block';
+      unlockIcon.classList.add('unlock-animation');
+
+      // Proceed to final reflection after animation
+      setTimeout(() => {
+        const unlockSection = document.getElementById("unlock");
+        const finalSection = document.getElementById("final");
+        if (unlockSection && finalSection) {
+          unlockSection.classList.remove("active");
+          finalSection.classList.add("active");
+        }
+      }, 1500);
+    }, 300);
+  }
+}
+
+
 
