@@ -1,6 +1,7 @@
 let stage = 1;
 let lastScene = "";
 const sound = document.getElementById("pageSound");
+const flipSound = document.getElementById("flipSound");
 const bgMusic = document.getElementById("bgMusic");
 bgMusic.volume = 0.1; // Set low volume for background music
 let musicStarted = false; // Flag to ensure music starts only once
@@ -22,6 +23,16 @@ function playSound() {
     sound.play();
   } catch (error) {
     console.warn("Audio playback failed:", error);
+  }
+}
+
+function playFlipSound() {
+  // Play the flip sound for page turning effect
+  try {
+    flipSound.currentTime = 0;
+    flipSound.play();
+  } catch (error) {
+    console.warn("Flip sound playback failed:", error);
   }
 }
 
@@ -213,15 +224,20 @@ function initializeClickUnlock() {
       unlockIcon.style.display = 'block';
       unlockIcon.classList.add('unlock-animation');
 
-      // Proceed to final reflection after animation
+      // Play flip sound before transitioning to final reflection
       setTimeout(() => {
-        const unlockSection = document.getElementById("unlock");
-        const finalSection = document.getElementById("final");
-        if (unlockSection && finalSection) {
-          unlockSection.classList.remove("active");
-          finalSection.classList.add("active");
-        }
-      }, 1500);
+        playFlipSound();
+
+        // Proceed to final reflection after flip sound
+        setTimeout(() => {
+          const unlockSection = document.getElementById("unlock");
+          const finalSection = document.getElementById("final");
+          if (unlockSection && finalSection) {
+            unlockSection.classList.remove("active");
+            finalSection.classList.add("active");
+          }
+        }, 500);
+      }, 1000);
     }, 300);
   }
 }
