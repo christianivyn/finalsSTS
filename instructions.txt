@@ -1,0 +1,11 @@
+Download the project files from: https://github.com/christianivyn/finalsSTS/archive/refs/heads/main.zip
+
+Click the link above or paste it into your browser to start the automatic download.
+
+After downloading, extract the ZIP file to a folder on your computer.
+
+To run the simulation:
+- Double-click the index.html file in the extracted folder, or
+- Open your web browser, press Ctrl+O (or Cmd+O on Mac), navigate to the extracted folder, and select index.html.
+
+The simulation will open in your browser and start automatically.
