@@ -2,6 +2,7 @@ let stage = 1;
 let lastScene = "";
 const sound = document.getElementById("pageSound");
 const flipSound = document.getElementById("flipSound");
+const sarcophagusSound = document.getElementById("sarcophagusSound");
 const bgMusic = document.getElementById("bgMusic");
 bgMusic.volume = 0.1; // Set low volume for background music
 let musicStarted = false; // Flag to ensure music starts only once
@@ -36,26 +37,74 @@ function playFlipSound() {
   }
 }
 
+function playSarcophagusSound() {
+  // Play the sarcophagus sound for dropdown reveal, matching the 1s animation
+  try {
+    sarcophagusSound.currentTime = 0;
+    sarcophagusSound.play();
+    // Stop the sound after 1s to match the dropdown animation
+    setTimeout(() => {
+      sarcophagusSound.pause();
+      sarcophagusSound.currentTime = 0;
+    }, 1000);
+  } catch (error) {
+    console.warn("Sarcophagus sound playback failed:", error);
+  }
+}
+
 // TOGGLE FULL INTRO
 function toggleFullIntro(btn) {
   const full = document.getElementById("fullIntro");
+  const isShowing = !full.classList.contains("show");
   full.classList.toggle("show");
 
   // Swap arrow
   btn.textContent = full.classList.contains("show") ? '▲' : '▼';
 
+  // Add glow immediately when selecting
+  if (isShowing) {
+    btn.classList.add("glow");
+  }
+
   // Play sound when 'More Info' button is clicked
   playSound();
+
+  // Play sarcophagus sound when dropdown content is shown
+  if (isShowing) {
+    playSarcophagusSound();
+    // Remove glow after animation
+    setTimeout(() => {
+      btn.classList.remove("glow");
+    }, 1000);
+  }
 }
 
 // REFERENCES BTN
 function toggleRefs(btn) {
   const content = btn.nextElementSibling;
+  const isShowing = !content.classList.contains("show");
   content.classList.toggle("show");
 
   btn.textContent = content.classList.contains("show")
     ? btn.textContent.replace("▼", "▲")
     : btn.textContent.replace("▲", "▼");
+
+  // Add glow immediately when selecting
+  if (isShowing) {
+    btn.classList.add("glow");
+  }
+
+  // Play click sound when references button is clicked
+  playSound();
+
+  // Play sarcophagus sound when dropdown content is shown
+  if (isShowing) {
+    playSarcophagusSound();
+    // Remove glow after animation
+    setTimeout(() => {
+      btn.classList.remove("glow");
+    }, 1000);
+  }
 }
 
 
@@ -68,7 +117,12 @@ function showScenarioMenu() {
 }
 
 // START SCENARIO
-function startScenario(num) {
+function startScenario(num, btn) {
+  // Add glow immediately when selecting
+  if (btn) {
+    btn.classList.add("glow");
+  }
+
   document.getElementById("scenarioMenu").classList.remove("active");
   if (num === 1) {
     document.getElementById("scene1").classList.add("active");
@@ -77,7 +131,15 @@ function startScenario(num) {
     document.getElementById("scene2").classList.add("active");
     stage = 2;
   }
+
   playSound();
+
+  // Remove glow after animation
+  if (btn) {
+    setTimeout(() => {
+      btn.classList.remove("glow");
+    }, 1000);
+  }
 }
 
 // SHOW RESULT
@@ -163,12 +225,27 @@ function generateArrow(id, fullText) {
 // TOGGLE FULL TEXT WITH ARROW SWAP
 function toggleFullText(id, btn) {
   const full = document.getElementById(id);
+  const isShowing = !full.classList.contains("show");
   full.classList.toggle("show");
 
   btn.textContent = full.classList.contains("show") ? '▲ More Info' : '▼ More Info';
 
+  // Add glow immediately when selecting
+  if (isShowing) {
+    btn.classList.add("glow");
+  }
+
   // Play sound when 'More Info' button in results is clicked
   playSound();
+
+  // Play sarcophagus sound when dropdown content is shown
+  if (isShowing) {
+    playSarcophagusSound();
+    // Remove glow after animation
+    setTimeout(() => {
+      btn.classList.remove("glow");
+    }, 1000);
+  }
 }
 
 // NAVIGATION
