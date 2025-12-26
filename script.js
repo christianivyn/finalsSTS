@@ -242,5 +242,19 @@ function initializeClickUnlock() {
   }
 }
 
+// END SIMULATION FUNCTION
+function endSimulation() {
+  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+  document.getElementById("thankyou").classList.add("active");
+  playSound();
+
+  // Start typewriter animation for thankyou text
+  const thankyouText = document.getElementById("thankyouText");
+  const madeByText = document.getElementById("madeByText");
+
+  thankyouText.textContent = "Thankyou for visiting the ancient knowledge";
+  madeByText.textContent = "Made by: Christian Ivyn R. Bayang, BSCPE 1-1";
+}
+
 
 
