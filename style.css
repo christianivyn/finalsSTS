@@ -235,7 +235,7 @@ button.interactive-btn:active,
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 1s ease, opacity 1s ease;
+  transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
   margin-top: 10px;
 }
 
